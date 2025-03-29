@@ -232,12 +232,13 @@
                     });
                 }
             });
-            document.querySelectorAll(".edit").foreach(button => {
+            document.querySelectorAll(".edit").forEach(button => {
                 button.addEventListener("click", function() {
-                    let p = this.previousElementSibling;
-                    p.contentEditable = true;
-                    p.focus();
+                     let classDiv = this.parentElement;
+                classDiv.querySelectorAll("p").forEach(p => {
+                p.contentEditable = true;
                 })
+            })
             })
 
             // Adiciona evento de clique nos botões de salvar
