@@ -244,12 +244,15 @@
             // Adiciona evento de clique nos botões de salvar
             document.querySelectorAll(".save-btn").forEach(button => {
                 button.addEventListener("click", function () {
+                    
                     let classDiv = this.parentElement;
                     let classKey = classDiv.getAttribute("data-class");
-                    let texts = Array.from(classDiv.querySelectorAll("p")).map(p => p.textContent);
-
-                    localStorage.setItem(classKey, JSON.stringify(texts));
-                    alert("Descrição salva!");
+                    let texts = Array.from(classDiv.querySelectorAll("p")).map(p => {
+                        p.contentEditable = false;
+                        p.style.border = "none";
+                        return p.textContent;
+                        localStorage.setItem(classKey, JSON.stringify(texts));
+                        alert("Descrição salva!");
                 });
             });
         });
