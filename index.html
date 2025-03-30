@@ -214,12 +214,12 @@
                    <button class="edit">Editar</button>
         </div>
 
-        <!-- Adicione outras classes seguindo o mesmo modelo -->
+      
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Recupera as descrições salvas ao carregar a página
+         
             document.querySelectorAll(".class").forEach(div => {
                 let classKey = div.getAttribute("data-class");
                 let savedTexts = JSON.parse(localStorage.getItem(classKey));
@@ -241,14 +241,14 @@
             })
             })
 
-            // Adiciona evento de clique nos botões de salvar
+           
             document.querySelectorAll(".save-btn").forEach(button => {
         button.addEventListener("click", function () {
             let classDiv = this.parentElement;
             let classKey = classDiv.getAttribute("data-class");
             let texts = Array.from(classDiv.querySelectorAll("p")).map(p => {
                 p.contentEditable = false;
-                p.style.border = "none"; // Remove o estilo de edição
+                p.style.border = "none"; 
                 return p.textContent;
             });
 
